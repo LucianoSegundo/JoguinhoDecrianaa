@@ -1,0 +1,64 @@
+#fora{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    margin: auto;
+    background-color:  #4a98f7;
+    height: 300px;
+    width:500px;
+    text-align: center;
+    align-items: center;
+}
+#dentro{
+    margin: auto;
+    text-align: center;
+    background-color: white;
+    height: 250px;
+    width: 440px;
+    border-radius: 20px;
+
+}
+
+#cont{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    
+}
+#entrada{
+
+    width: 140px;
+    height: 60px;
+    border-radius: 10px;
+    border: solid 1px;
+    font-size: 20px;
+    text-align: center;
+
+}
+#botão{
+    width: 140px;
+    height: 60px;
+    border-radius: 10px;
+    border: none;
+    background-color: #4a98f7;
+    color: white;
+    font-size: 20px;
+    margin: 15px 0px 10px 40px;
+}
+#botão:hover{
+    background-color: #63a5f5;
+    color: white;
+}
+h2
+{
+font-family: Arial, Helvetica, sans-serif;
+ font-weight: normal;
+}
+p{
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
