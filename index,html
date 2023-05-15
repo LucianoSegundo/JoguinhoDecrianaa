@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joguinho da prova</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="cont">
+        <div id="fora" >
+            <div id="dentro">
+            <h2> guess a number from 1 to 100</h2>
+            <p id="mensagem"> <br></p>
+               <div>
+                   <input id ="entrada" type="text" value="">
+                   <button id="botão">check</button>
+
+               </div>
+                <p id="chances"> Você tem 7 chances</p>
+</div>
+</div>
+</div>
+</body>
+</html>
+<script>
+let botão = document.getElementById('botão');
+chance = 7;
+
+botão.addEventListener("click", function(){
+let entrada = document.getElementById('entrada');
+let mensagem = document.getElementById("mensagem");
+let chances = document.getElementById("chances");
+
+let numero = sortNumero();
+chance = chance -1;
+if((entrada.value !==numero)){
+
+    if(entrada.value < numero){
+        let resultado = numero - entrada.value;
+        novamen = "Você erros, a diferença é de "+ resultado+ " para mais"; 
+    mensagem.textContent = novamen;
+   
+    }
+    if(entrada.value > numero){
+        let resultado = entrada.value -numero ;
+        novamen = "Você erros, a diferença é de "+ resultado+ " para menos"; 
+    mensagem.textContent = novamen;
+   
+    }
+  
+    chances.textContent = "Você tem " + chance + " chances";
+   
+}
+if(entrada.value > 100 || isNaN(entrada.value) ||entrada.value < 1 ){
+    novamen = "Você deve inserir um numero entre 1 e 100"; 
+    mensagem.textContent = novamen;
+}
+
+if(entrada.value == numero){
+    novamen = "Você ganhou esse joguinho de criaça, parabens"; 
+    mensagem.textContent = novamen;
+    
+    setTimeout(resetar,5000);
+        chances.textContent = "Você tem " + chance + " chances";
+}
+if((chance == 0) && (entrada.value !== numero)){
+    novamen = "Você deve inserir um numero entre 1 e 100"; 
+    mensagem.textContent = novamen;
+
+    chances.innerHTML = "<p>Você é a vergonha para todo seu clã <p>";
+        setTimeout(resetar,5000);
+        
+}
+
+});
+function resetar(){
+    
+    chance = 7;
+        chances.textContent = "Você tem " + chance + " chances";
+    
+        mensagem.innerHTML = " <p> <br> </p>";
+    }
+    
+function sortNumero() {
+    return Math.floor(Math.random() * 100) + 1;
+}
+</script>
